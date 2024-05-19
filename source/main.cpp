@@ -2,6 +2,7 @@
 #include <vector>
 #include <cmath>
 
+#include "knapsackDynamicProgramming.h"
 #include "knapsackBruteForce.h"
 
 #define PLACEHOLDER 0
@@ -45,7 +46,7 @@ int main(int argc, char *argv[])
         }
         else if (option == "dynamic-programming" || option == "dp")
         {
-            // dp solution
+            // dynamic programming solution
         }
         else if (option == "exit")
         {
