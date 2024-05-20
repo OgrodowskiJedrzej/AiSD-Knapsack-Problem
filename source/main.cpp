@@ -22,25 +22,31 @@ int main(int argc, char *argv[])
             inputMode = READ_FILE;
         else
         {
-            std::cout << "You incorrect specified the input mode.\n";
+            std::cerr << "You incorrect specified the input mode.\n";
             return 1;
         }
     }
     else
     {
-        std::cout << "You did not specify the input mode.\n"
+        std::cerr << "You did not specify the input mode.\n"
                   << std::endl;
         return 1;
     }
 
+    // some important stuff for now here
+    int capacity = 0;
     std::vector<int> values;
     std::vector<int> weights;
+    const std::string filePath = "test.txt";
 
+    // handle diffrent inputs
     if (inputMode == GENERATE)
     {
         int count;
         int maxValues;
         int maxWeights;
+        std::cout << "Provide capacity" << std::endl;
+        std::cin >> capacity;
         std::cout << "Provide number of items" << std::endl;
         std::cin >> count;
         std::cout << "Provide maximum value" << std::endl;
@@ -49,11 +55,12 @@ int main(int argc, char *argv[])
         std::cin >> maxWeights;
         generateInputValues(count, maxValues, maxWeights, values, weights);
     }
-    else
+    else if (inputMode == READ_FILE)
     {
-        // read from file
+        capacity = readFromFile(filePath, values, weights);
     }
 
+    // menu part
     while (true)
     {
         std::string option;
@@ -62,8 +69,8 @@ int main(int argc, char *argv[])
 
         if (option == "brute-force" || option == "bf")
         {
-            auto result = knapsackBruteForce(values, weights, 200);
-
+            auto result = knapsackBruteForce(values, weights, capacity);
+            // wrap this into function
             int max = result.first;
             std::vector<int> resultItems = result.second;
 
@@ -77,7 +84,7 @@ int main(int argc, char *argv[])
         }
         else if (option == "dynamic-programming" || option == "dp")
         {
-            auto result = knapsackDynamicProgramming(values, weights, 200);
+            auto result = knapsackDynamicProgramming(values, weights, capacity);
             // print
         }
         else if (option == "exit")
