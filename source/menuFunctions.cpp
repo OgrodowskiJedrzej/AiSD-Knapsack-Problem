@@ -64,3 +64,17 @@ int readFromFile(const std::string filename, std::vector<int> &values, std::vect
     inputFile.close();
     return c;
 }
+
+void printResults(std::pair<int, std::vector<int>> algorithm)
+{
+    auto result = algorithm;
+    int maximumValue = result.first;
+    std::vector<int> resultItems = result.second;
+    std::cout << "Maximum value: " << maximumValue << std::endl;
+    std::cout << "Items indexes: ";
+    for (int idx : resultItems)
+    {
+        std::cout << idx << " ";
+    }
+    std::cout << std::endl;
+}

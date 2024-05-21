@@ -69,18 +69,7 @@ int main(int argc, char *argv[])
 
         if (option == "brute-force" || option == "bf")
         {
-            auto result = knapsackBruteForce(values, weights, capacity);
-            // wrap this into function
-            int max = result.first;
-            std::vector<int> resultItems = result.second;
-
-            std::cout << "Maximum value: " << max << std::endl;
-            std::cout << "Items indexes: ";
-            for (int idx : resultItems)
-            {
-                std::cout << idx << " ";
-            }
-            std::cout << std::endl;
+            printResults(knapsackBruteForce(values, weights, capacity));
         }
         else if (option == "dynamic-programming" || option == "dp")
         {
