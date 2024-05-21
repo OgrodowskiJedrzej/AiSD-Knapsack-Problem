@@ -78,3 +78,13 @@ void printResults(std::pair<int, std::vector<int>> algorithm)
     }
     std::cout << std::endl;
 }
+
+void printItems(std::vector<int> &values, std::vector<int> &weights)
+{
+    int numberOfItems = values.size();
+
+    for (int i = 0; i < numberOfItems; i++)
+    {
+        std::cout << "Item index: " << i << " Value: " << values[i] << " Weight: " << weights[i] << std::endl;
+    }
+}

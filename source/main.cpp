@@ -75,6 +75,10 @@ int main(int argc, char *argv[])
         {
             printResults(knapsackDynamicProgramming(values, weights, capacity));
         }
+        else if (option == "print")
+        {
+            printItems(values, weights);
+        }
         else if (option == "exit")
         {
             break;
