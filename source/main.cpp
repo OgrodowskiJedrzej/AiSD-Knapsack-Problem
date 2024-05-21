@@ -60,7 +60,7 @@ int main(int argc, char *argv[])
         capacity = readFromFile(filePath, values, weights);
     }
 
-    // menu part
+    // menu
     while (true)
     {
         std::string option;
@@ -73,8 +73,7 @@ int main(int argc, char *argv[])
         }
         else if (option == "dynamic-programming" || option == "dp")
         {
-            auto result = knapsackDynamicProgramming(values, weights, capacity);
-            // print
+            printResults(knapsackDynamicProgramming(values, weights, capacity));
         }
         else if (option == "exit")
         {
