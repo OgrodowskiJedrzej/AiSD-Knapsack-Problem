@@ -72,9 +72,9 @@ void printResults(std::pair<int, std::vector<int>> algorithm)
     std::vector<int> resultItems = result.second;
     std::cout << "Maximum value: " << maximumValue << std::endl;
     std::cout << "Items indexes: ";
-    for (int idx : resultItems)
+    for (int item : resultItems)
     {
-        std::cout << idx << " ";
+        std::cout << item << " ";
     }
     std::cout << std::endl;
 }

@@ -33,10 +33,11 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    // some important stuff for now here
-    int capacity = 0;
+    int capacity = 0; // init capacity
     std::vector<int> values;
     std::vector<int> weights;
+
+    // you can change file path here
     const std::string filePath = "test.txt";
 
     // handle diffrent inputs
@@ -84,7 +85,7 @@ int main(int argc, char *argv[])
             std::cout << "\nOptions:\n"
                       << "  brute-force (bf)          - Solve the knapsack problem using brute force method.\n"
                       << "  dynamic-programming (dp)  - Solve the knapsack problem using dynamic programming method.\n"
-                      << "  print                     - Print the list of items with their values and weights.\n"
+                      << "  print                     - Print the list of all items with their values and weights.\n"
                       << "  exit                      - Exit the program.\n";
         }
         else if (option == "exit")
