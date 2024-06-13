@@ -79,6 +79,14 @@ int main(int argc, char *argv[])
         {
             printItems(values, weights);
         }
+        else if (option == "help")
+        {
+            std::cout << "\nOptions:\n"
+                      << "  brute-force (bf)          - Solve the knapsack problem using brute force method.\n"
+                      << "  dynamic-programming (dp)  - Solve the knapsack problem using dynamic programming method.\n"
+                      << "  print                     - Print the list of items with their values and weights.\n"
+                      << "  exit                      - Exit the program.\n";
+        }
         else if (option == "exit")
         {
             break;
